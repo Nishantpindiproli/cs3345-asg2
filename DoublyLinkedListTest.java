@@ -1,286 +1,271 @@
-
 public class DoublyLinkedListTest {
 
-	public static void main(String[] args) {
-		
-		// Comment only the test functions you want to run
-		
-		// testPrintEmptyListForward();
-		// testPrintEmptyListBackward();
-		// testEmptyGet();
-		// testAddFirstAndGet();
-		// testAddFirstForwards();
-		// testAddFirstBackwards();
-		// testAddLastAndGet();
-		// testAddLastForwards();
-		// testAddLastBackwards();
-		// testIsEmpty();
-		// testGetLength();
-		// testRemoveFromEmptyList();
-		// testRemoveFromListWithOneElementNegative();
-		// testRemoveFromListWithOneElementPositive();
-		// testRemoveFromListWithTwoElementNegative();
-		// testRemoveFromListWithTwoElementPositive();
-		// testRemoveFromListWithThreeElementNegative();
-		// testRemoveFromListWithThreeElementPositive();
-		// testIterator();
-		
+    public static void main(String[] args) {
 
-	}
-	
-	public static void testPrintEmptyListForward() {
-		//TODO
-	}
-	public static void testPrintEmptyListBackward() {
-		//TODO
-	}
-	
-	public static void testEmptyGet() {
-		List<String> list = new DoublyLinkedList<String>();
+        // Uncomment only the test functions you want to run
+
+        // testPrintEmptyListForward();
+        // testPrintEmptyListBackward();
+        // testEmptyGet();
+        // testAddFirstAndGet();
+        // testAddFirstForwards();
+        // testAddFirstBackwards();
+        // testAddLastAndGet();
+        // testAddLastForwards();
+        // testAddLastBackwards();
+        // testIsEmpty();
+        // testGetLength();
+        // testRemoveFromEmptyList();
+        // testRemoveFromListWithOneElementNegative();
+        // testRemoveFromListWithOneElementPositive();
+        // testRemoveFromListWithTwoElementNegative();
+        // testRemoveFromListWithTwoElementPositive();
+        // testRemoveFromListWithThreeElementNegative();
+        // testRemoveFromListWithThreeElementPositive();
+        // testIterator();
+    }
+
+    public static void testPrintEmptyListForward() {
+        System.out.println("");
+        System.out.println("-------------- testPrintEmptyListForward ------------:");
+        List<String> list = new DoublyLinkedList<String>();
+        System.out.println("Printing empty list forward (should print nothing):");
+        list.print();
+        System.out.println("-------------- end testPrintEmptyListForward ------------:");
+    }
+
+    public static void testPrintEmptyListBackward() {
+        System.out.println("");
+        System.out.println("-------------- testPrintEmptyListBackward ------------:");
+        List<String> list = new DoublyLinkedList<String>();
+        System.out.println("Printing empty list backward (should print nothing):");
+        list.printBackwards();
+        System.out.println("-------------- end testPrintEmptyListBackward ------------:");
+    }
+
+    public static void testEmptyGet() {
+        List<String> list = new DoublyLinkedList<String>();
         System.out.println("The fifth element data in an empty list is " + list.get(5));
-	}
-	public static void testAddFirstAndGet () {
-		List<String> list = new DoublyLinkedList<String>();
+    }
 
-		// now add several items to the List
-		list.addFirst("Apple");
-		list.addFirst("Banana");
-		list.addFirst("Cherry");
-		list.addFirst("Donut");
-		list.addFirst("Donut"); 
-		list.addFirst("End");
-		
-		System.out.println("The sixth element should be Apple, and it is: " + list.get(5));
-		System.out.println("The fifth element should be Banana, and it is: " + list.get(4));
-		System.out.println("The fourth element should be Cherry, and it is: " + list.get(3));
-		System.out.println("The second element should be Donut, and it is: " + list.get(1));
-		System.out.println("The first element should be End, and it is: " + list.get(0));
+    public static void testAddFirstAndGet() {
+        List<String> list = new DoublyLinkedList<String>();
 
-		
-	}
-	
-	public static void testAddFirstForwards() {
-		System.out.println("");
-		System.out.println("-------------- testAppendForwards ------------:");
-		List<String> list = new DoublyLinkedList<String>();
+        list.addFirst("Apple");
+        list.addFirst("Banana");
+        list.addFirst("Cherry");
+        list.addFirst("Donut");
+        list.addFirst("Donut");
+        list.addFirst("End");
 
-		// now add several items to the List
-		list.addFirst("Apple");
-		list.addFirst("Banana");
-		list.addFirst("Cherry");
-		list.addFirst("Donut");
-		list.addFirst("Donut");
-		list.addFirst("End");
+        System.out.println("The sixth element should be Apple, and it is: " + list.get(5));
+        System.out.println("The fifth element should be Banana, and it is: " + list.get(4));
+        System.out.println("The fourth element should be Cherry, and it is: " + list.get(3));
+        System.out.println("The second element should be Donut, and it is: " + list.get(1));
+        System.out.println("The first element should be End, and it is: " + list.get(0));
+    }
 
-		System.out.println("You should get the list elements in this order: End, Donut, Donut, Cherry, Banana, Apple");
-		list.print();
-		System.out.println("--------- End of testAppendForwards -----------:");
-	}
-	
-	public static void testAddFirstBackwards() {
-		System.out.println("");
-		System.out.println("-------------- testAppendBackwards ------------:");
-		List<String> list = new DoublyLinkedList<String>();
+    public static void testAddFirstForwards() {
+        System.out.println("");
+        System.out.println("-------------- testAddFirstForwards ------------:");
+        List<String> list = new DoublyLinkedList<String>();
 
-		// now add several items to the List
-		list.addFirst("Apple");
-		list.addFirst("Banana");
-		list.addFirst("Cherry");
-		list.addFirst("Donut");
-		list.addFirst("Donut");
-		list.addFirst("End");
+        list.addFirst("Apple");
+        list.addFirst("Banana");
+        list.addFirst("Cherry");
+        list.addFirst("Donut");
+        list.addFirst("Donut");
+        list.addFirst("End");
 
-		System.out.println("You should get the list elements in this order: Apple, Banana, Cherry, Donut, Donut, End");
-		list.printBackwards();
-		System.out.println("--------- End of testAppendBackwards -----------:");
-	}
-	
-	
-	public static void testIsEmpty() {
-		System.out.println("");
-		System.out.println("-------------- testIsEmpty ------------:");
-		List<String> list = new DoublyLinkedList<String>();
-		System.out.println("isEmpty() should return true, and it is returning " + list.isEmpty());
-		list.addFirst("One");
-		System.out.println("isEmpty() should return false, and it is returning " + list.isEmpty());
-		System.out.println("--------- End of testIsEmpty -----------:");
-	}
-	
+        System.out.println("You should get: End, Donut, Donut, Cherry, Banana, Apple");
+        list.print();
+        System.out.println("--------- End of testAddFirstForwards -----------:");
+    }
 
-	public static void testGetLength() {
-		System.out.println("");
-		System.out.println("-------------- testGetLength ------------:");
-		List<String> list = new DoublyLinkedList<String>();
-		System.out.println("getLength() should return 0, and it is returning " + list.getLength());
-	
-		// now add several items to the List
-		list.addFirst("Apple");
-		System.out.println("getLength() should return 1, and it is returning " + list.getLength());
-		
-		list.addLast("Banana");
-		System.out.println("getLength() should return 2, and it is returning " + list.getLength());
+    public static void testAddFirstBackwards() {
+        System.out.println("");
+        System.out.println("-------------- testAddFirstBackwards ------------:");
+        List<String> list = new DoublyLinkedList<String>();
 
-		list.addFirst("Cherry");
-		System.out.println("getLength() should return 3, and it is returning " + list.getLength());
-		System.out.println("--------- End of testGetLength -----------:");
+        list.addFirst("Apple");
+        list.addFirst("Banana");
+        list.addFirst("Cherry");
+        list.addFirst("Donut");
+        list.addFirst("Donut");
+        list.addFirst("End");
 
-	}
-	
-	public static void testRemoveFromEmptyList() {
-		
-		System.out.println("");
-		System.out.println("-------------- testRemoveFromEmptyList ------------:");
-		List<String> list = new DoublyLinkedList<String>();
-		System.out.println("Nothing to remove from an empty list, to remove() should return false, and it returns " +list.remove("something"));
-		System.out.println("-------------- testRemoveFromEmptyList ------------:");
-	}
+        System.out.println("You should get: Apple, Banana, Cherry, Donut, Donut, End");
+        list.printBackwards();
+        System.out.println("--------- End of testAddFirstBackwards -----------:");
+    }
+
+    public static void testAddLastAndGet() {
+        List<String> list = new DoublyLinkedList<String>();
+
+        list.addLast("Apple");
+        list.addLast("Banana");
+        list.addLast("Cherry");
+        list.addLast("Donut");
+        list.addLast("Donut");
+        list.addLast("End");
+
+        System.out.println("The sixth element should be End, and it is: " + list.get(5));
+        System.out.println("The fifth element should be Donut, and it is: " + list.get(4));
+        System.out.println("The fourth element should be Donut, and it is: " + list.get(3));
+        System.out.println("The second element should be Banana, and it is: " + list.get(1));
+        System.out.println("The first element should be Apple, and it is: " + list.get(0));
+    }
+
+    public static void testAddLastForwards() {
+        System.out.println("");
+        System.out.println("-------------- testAddLastForwards ------------:");
+        List<String> list = new DoublyLinkedList<String>();
+
+        list.addLast("Apple");
+        list.addLast("Banana");
+        list.addLast("Cherry");
+        list.addLast("Donut");
+        list.addLast("Donut");
+        list.addLast("End");
+
+        System.out.println("You should get: Apple, Banana, Cherry, Donut, Donut, End");
+        list.print();
+        System.out.println("--------- End of testAddLastForwards -----------:");
+    }
+
+    public static void testAddLastBackwards() {
+        System.out.println("");
+        System.out.println("-------------- testAddLastBackwards ------------:");
+        List<String> list = new DoublyLinkedList<String>();
+
+        list.addLast("Apple");
+        list.addLast("Banana");
+        list.addLast("Cherry");
+        list.addLast("Donut");
+        list.addLast("Donut");
+        list.addLast("End");
+
+        System.out.println("You should get: End, Donut, Donut, Cherry, Banana, Apple");
+        list.printBackwards();
+        System.out.println("--------- End of testAddLastBackwards -----------:");
+    }
+
+    public static void testIsEmpty() {
+        System.out.println("");
+        System.out.println("-------------- testIsEmpty ------------:");
+        List<String> list = new DoublyLinkedList<String>();
+        System.out.println("isEmpty() should be true: " + list.isEmpty());
+        list.addFirst("One");
+        System.out.println("isEmpty() should be false: " + list.isEmpty());
+        System.out.println("--------- End of testIsEmpty -----------:");
+    }
+
+    public static void testGetLength() {
+        System.out.println("");
+        System.out.println("-------------- testGetLength ------------:");
+        List<String> list = new DoublyLinkedList<String>();
+        System.out.println("Length should be 0: " + list.getLength());
+
+        list.addFirst("Apple");
+        System.out.println("Length should be 1: " + list.getLength());
+
+        list.addLast("Banana");
+        System.out.println("Length should be 2: " + list.getLength());
+
+        list.addFirst("Cherry");
+        System.out.println("Length should be 3: " + list.getLength());
+        System.out.println("--------- End of testGetLength -----------:");
+    }
+
+    public static void testRemoveFromEmptyList() {
+        System.out.println("");
+        System.out.println("-------------- testRemoveFromEmptyList ------------:");
+        List<String> list = new DoublyLinkedList<String>();
+        System.out.println("remove() should return false: " + list.remove("something"));
+        System.out.println("-------------- end testRemoveFromEmptyList ------------:");
+    }
+
     public static void testRemoveFromListWithOneElementNegative() {
-		
-		System.out.println("");
-		System.out.println("-------------- testRemoveFromListWithOneElementNegative ------------:");
-		List<String> list = new DoublyLinkedList<String>();
-		list.addFirst("Apple");
-		System.out.println("remove() should return false, and it returns " +list.remove("something"));
-		System.out.println("-------------- testRemoveFromListWithOneElementNegative ------------:");
-	}
-    public static void testRemoveFromListWithTwoElementNegative() {
-		
-		System.out.println("");
-		System.out.println("-------------- testRemoveFromListWithTwoElementNegative ------------:");
-		List<String> list = new DoublyLinkedList<String>();
-		list.addFirst("Apple");
-		list.addFirst("Cherry");
-		System.out.println("remove() should return false, and it returns " +list.remove("something"));
-		System.out.println("-------------- testRemoveFromListWithTwoElementNegative  ------------:");
-	}
-    public static void testRemoveFromListWithTwoElementPositive() {
-		
-		System.out.println("");
-		System.out.println("-------------- testRemoveFromListWithTwoElementPositive ------------:");
-		List<String> list = new DoublyLinkedList<String>();
-		list.addFirst("Apple");
-		list.addFirst("Cherry");
-		System.out.println("remove() should return true, and it returns " +list.remove("Cherry"));
-		System.out.println("You should get the list elements in this order: Apple");
-		list.print();
-		System.out.println("-------------- testRemoveFromListWithTwoElementPositive  ------------:");
-	}
-    
+        System.out.println("");
+        System.out.println("-------------- testRemoveFromListWithOneElementNegative ------------:");
+        List<String> list = new DoublyLinkedList<String>();
+        list.addFirst("Apple");
+        System.out.println("remove() should return false: " + list.remove("something"));
+        System.out.println("-------------- end testRemoveFromListWithOneElementNegative ------------:");
+    }
+
     public static void testRemoveFromListWithOneElementPositive() {
-		
-		System.out.println("");
-		System.out.println("-------------- testRemoveFromListWithOneElementPositive ------------:");
-		List<String> list = new DoublyLinkedList<String>();
-		list.addFirst("Apple");
-		System.out.println("remove() should return true, and it returns " +list.remove("Apple"));
-		System.out.println("You should get an empty list");
-		list.print();
-		System.out.println("-------------- testRemoveFromListWithOneElementPositive ------------:");
-	}
-    
-   public static void testRemoveFromListWithThreeElementPositive() {
-		
-		System.out.println("");
-		System.out.println("-------------- testRemoveFromListWithThreeElementPositive ------------:");
-		List<String> list = new DoublyLinkedList<String>();
-		list.addLast("Apple");
-		list.addLast("Cherry");
-		list.addLast("Banana");
-		System.out.println("remove() should return true , and it returns " +list.remove("Cherry"));
-		System.out.println("You should get the list elements in this order: Apple, Banana");
-		list.print();
-		System.out.println("-------------- testRemoveFromListWithThreeElementPositive  ------------:");
-	}
+        System.out.println("");
+        System.out.println("-------------- testRemoveFromListWithOneElementPositive ------------:");
+        List<String> list = new DoublyLinkedList<String>();
+        list.addFirst("Apple");
+        System.out.println("remove() should return true: " + list.remove("Apple"));
+        System.out.println("You should get an empty list:");
+        list.print();
+        System.out.println("-------------- end testRemoveFromListWithOneElementPositive ------------:");
+    }
+
+    public static void testRemoveFromListWithTwoElementNegative() {
+        System.out.println("");
+        System.out.println("-------------- testRemoveFromListWithTwoElementNegative ------------:");
+        List<String> list = new DoublyLinkedList<String>();
+        list.addFirst("Apple");
+        list.addFirst("Cherry");
+        System.out.println("remove() should return false: " + list.remove("something"));
+        System.out.println("-------------- end testRemoveFromListWithTwoElementNegative ------------:");
+    }
+
+    public static void testRemoveFromListWithTwoElementPositive() {
+        System.out.println("");
+        System.out.println("-------------- testRemoveFromListWithTwoElementPositive ------------:");
+        List<String> list = new DoublyLinkedList<String>();
+        list.addFirst("Apple");
+        list.addFirst("Cherry");
+        System.out.println("remove() should return true: " + list.remove("Cherry"));
+        System.out.println("You should get: Apple");
+        list.print();
+        System.out.println("-------------- end testRemoveFromListWithTwoElementPositive ------------:");
+    }
+
     public static void testRemoveFromListWithThreeElementNegative() {
-		
-		System.out.println("");
-		System.out.println("-------------- testRemoveFromListWithThreeElementNegative ------------:");
-		List<String> list = new DoublyLinkedList<String>();
-		list.addLast("Apple");
-		list.addLast("Cherry");
-		list.addLast("Banana");
-		System.out.println("remove() should return false, and it returns " +list.remove("something"));
-		System.out.println("You should get the list elements in this order: Apple, Cherry, Banana");
-		list.print();
-		System.out.println("-------------- testRemoveFromListWithThreeElementNegative  ------------:");
-	}
+        System.out.println("");
+        System.out.println("-------------- testRemoveFromListWithThreeElementNegative ------------:");
+        List<String> list = new DoublyLinkedList<String>();
+        list.addLast("Apple");
+        list.addLast("Cherry");
+        list.addLast("Banana");
+        System.out.println("remove() should return false: " + list.remove("something"));
+        System.out.println("You should get: Apple, Cherry, Banana");
+        list.print();
+        System.out.println("-------------- end testRemoveFromListWithThreeElementNegative ------------:");
+    }
 
-   
-	
-	public static void testAddLastAndGet () {
-		List<String> list = new DoublyLinkedList<String>();
+    public static void testRemoveFromListWithThreeElementPositive() {
+        System.out.println("");
+        System.out.println("-------------- testRemoveFromListWithThreeElementPositive ------------:");
+        List<String> list = new DoublyLinkedList<String>();
+        list.addLast("Apple");
+        list.addLast("Cherry");
+        list.addLast("Banana");
+        System.out.println("remove() should return true: " + list.remove("Cherry"));
+        System.out.println("You should get: Apple, Banana");
+        list.print();
+        System.out.println("-------------- end testRemoveFromListWithThreeElementPositive ------------:");
+    }
 
-		// now add several items to the List
-		list.addLast("Apple");
-		list.addLast("Banana");
-		list.addLast("Cherry");
-		list.addLast("Donut");
-		list.addLast("Donut"); 
-		list.addLast("End");
-		
-		System.out.println("The sixth element should be End, and it is: " + list.get(5));
-		System.out.println("The fifth element should be Donut, and it is: " + list.get(4));
-		System.out.println("The fourth element should be Donut, and it is: " + list.get(3));
-		System.out.println("The second element should be Banana, and it is: " + list.get(1));
-		System.out.println("The first element should be Apple, and it is: " + list.get(0));
+    public static void testIterator() {
+        System.out.println("");
+        System.out.println("-------------- testIterator ------------:");
+        DoublyLinkedList<String> list = new DoublyLinkedList<String>();
+        list.addLast("Apple");
+        list.addLast("Cherry");
+        list.addLast("Banana");
 
-		
-	}
-	
-	public static void testAddLastForwards() {
-		System.out.println("");
-		System.out.println("-------------- testAddLastForwards ------------:");
-		List<String> list = new DoublyLinkedList<String>();
-
-		// now add several items to the List
-		list.addLast("Apple");
-		list.addLast("Banana");
-		list.addLast("Cherry");
-		list.addLast("Donut");
-		list.addLast("Donut");
-		list.addLast("End");
-
-		System.out.println("You should get the list elements in this order: Apple, Banana, Cherry, Donut, Donut, End");
-		list.print();
-		System.out.println("--------- End of testAddLastForwards -----------:");
-	}
-	
-	public static void testAddLastBackwards() {
-		System.out.println("");
-		System.out.println("-------------- testAddLastBackwards ------------:");
-		List<String> list = new DoublyLinkedList<String>();
-
-		// now add several items to the List
-		list.addLast("Apple");
-		list.addLast("Banana");
-		list.addLast("Cherry");
-		list.addLast("Donut");
-		list.addLast("Donut");
-		list.addLast("End");
-
-		System.out.println("You should get the list elements in this order: End, Donut, Donut, Cherry, Banana, Apple");
-		list.printBackwards();
-		System.out.println("--------- End of testAddLastBackwards -----------:");
-	}
-	
-
-
-	 public static void testIterator() {
-		
-		System.out.println("");
-		System.out.println("-------------- testIterator ------------:");
-		List<String> list = new DoublyLinkedList<String>();
-		list.addLast("Apple");
-		list.addLast("Cherry");
-		list.addLast("Banana");
-
-		//TODO	
-                // ADD code to obtain iterator object, then uses it to iterate through the list and print its data.
-		
-		System.out.println("-------------- testIterator  ------------:");
-	}
-
-
-
+        System.out.println("You should get: Apple Cherry Banana");
+        for (String item : list) {
+            System.out.print(item + " ");
+        }
+        System.out.println();
+        System.out.println("-------------- end testIterator ------------:");
+    }
 }
-
